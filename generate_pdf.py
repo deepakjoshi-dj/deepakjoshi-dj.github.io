@@ -114,7 +114,7 @@ contact_line([
     ("Phone: ", "+91 9039650540",             "tel:+919039650540"),
 ])
 contact_line([
-    ("LinkedIn: ",  "joshi-deepak-kumar",        "https://www.linkedin.com/in/joshi-deepak-kumar/"),
+    ("LinkedIn: ",  "linkedin.com/in/joshi-deepak-kumar",        "https://www.linkedin.com/in/joshi-deepak-kumar/"),
     ("GitHub: ",    "deepakjoshi-dj",             "https://github.com/deepakjoshi-dj"),
     ("Portfolio: ", "deepakjoshi-dj.github.io",   "https://deepakjoshi-dj.github.io"),
 ])
@@ -189,14 +189,14 @@ for b in [
     "Integrated **FHIR-compliant APIs** and frontend workflows to support healthcare interoperability requirements.",
     "Built and optimized **responsive dashboard interfaces** for content management and operational workflows across devices.",
     "Implemented **JWT-based authentication and authorization** across frontend routes and backend APIs for secure access control.",
-    "Collaborated in feature architecture discussions focused on scalability and maintainability.",
+    "Contributed to feature architecture discussions, proposing design decisions that improved system scalability and long-term maintainability.",
 ]:
     bullet(b)
 
 # ════════════════════════════════════════════════════════════════════════════
 # PERSONAL PROJECT
 # ════════════════════════════════════════════════════════════════════════════
-section("Personal Project")
+section("Projects")
 pdf.set_x(pdf.l_margin)
 pdf.set_font("Helvetica", "BI", 10)
 pdf.set_text_color(*BLACK)
@@ -244,7 +244,7 @@ def edu(degree, school, period, cgpa):
     pdf.ln(2)
 
 edu("Master of Computer Applications (MCA)",
-    "Chandigarh University", "Jul 2024 - 2026", "8.90")
+    "Chandigarh University", "Jul 2024 - Jun 2026 (Expected)", "8.90")
 edu("Bachelor of Vocation (B.Voc) in Software Development",
     "Indira Gandhi National Tribal University", "Jul 2017 - Jun 2020", "7.50")
 
