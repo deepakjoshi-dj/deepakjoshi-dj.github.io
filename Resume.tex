@@ -1,0 +1,236 @@
+\documentclass[10pt, letterpaper]{article}
+
+% ================= Packages =================
+\usepackage[
+    ignoreheadfoot,
+    top=1cm,
+    bottom=1cm,
+    left=2cm,
+    right=2cm,
+    footskip=0.0cm,
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Shravan Kumar Chatlapally CV},
+    pdfauthor={Shravan Kumar Chatlapally},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% ============== Font Configuration ==============
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{mathptmx}
+\fi
+
+% ============== Settings ==============
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\Large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+\renewcommand\labelitemi{$\circ$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10cm,
+        parsep=0.10cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2cm + 0.00001cm}{0.2cm + 0.00001cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{
+}{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+% ================= Document =================
+\begin{document}
+
+% ---------- Header ----------
+\begin{header}
+    \textbf{\fontsize{22pt}{24pt}\selectfont Deepak Kumar Joshi}
+
+    \vspace{0.3cm}
+
+    \normalsize
+    \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Hyderabad, India}%
+    \kern 0.25cm%
+    \AND%
+    \kern 0.25cm%
+    \mbox{\hrefWithoutArrow{mailto:dpkjoshi656.dj@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}dpkjoshi656.dj@gmail.com}}%
+    \kern 0.25cm%
+    \AND%
+    \kern 0.25cm%
+    \mbox{\hrefWithoutArrow{tel:+91
+9039650540}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+91 9039650540}}%
+    \kern 0.25cm%
+    \AND%
+    \kern 0.25cm%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/joshi-deepak-kumar/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}joshi-deepak-kumar}}%
+    \kern 0.25cm%
+    \AND%
+    \kern 0.25cm%
+    \mbox{\hrefWithoutArrow{https://github.com/deepakjoshi-dj}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}deepakjoshi-dj}}%
+    \kern 0.25cm%
+    \AND%
+    \kern 0.25cm%
+    \mbox{\hrefWithoutArrow{https://deepakjoshi-dj.github.io}{\color{black}{\footnotesize\faGlobe}\hspace*{0.13cm}deepakjoshi-dj.github.io}}%
+\end{header}
+
+% ---------- Summary ----------
+\section{Summary}
+\begin{onecolentry}
+    Full Stack Developer with 3+ years of experience building scalable SaaS and AI-powered web applications using React, Next.js, Node.js, Express, PostgreSQL, and Hasura. Experienced in owning end-to-end feature development, system design participation, API architecture, authentication systems, cloud deployments, and observability using Datadog, AWS, and GCP. Hands-on experience building AI-integrated products, healthcare interoperability (FHIR), and production-grade monitoring systems.
+\end{onecolentry}
+
+% ---------- Skills ----------
+\section{Skills}
+\begin{onecolentry}
+    \textbf{Frontend:} React.js, Next.js, TypeScript, JavaScript (ES6+), Redux Toolkit, Tailwind CSS, HTML5, CSS3 \\[4pt]
+    \textbf{Backend:} Node.js, Express.js, REST APIs, Hasura, JWT Authentication, Socket.io  \\[4pt]
+    \textbf{Databases:} PostgreSQL, MongoDB \\[4pt]
+    \textbf{Cloud \& Infrastructure:} AWS (EC2, SES), GCP (Cloud Run, Cloud Functions/Triggers), Nginx \\[4pt]
+    \textbf{Observability \& Monitoring:} Datadog (RUM, Logs, Dashboards), GCP Logging, Performance Monitoring \\[4pt]
+    \textbf{AI Developer Tooling:} Claude Code, MCP, GPT-assisted debugging \& development workflows \\[4pt]
+    \textbf{Version Control / Workflow:} Git, GitHub, Bitbucket, Agile/Scrum
+\end{onecolentry}
+
+% ---------- Experience ----------
+\section{Experience}
+
+\begin{twocolentry}{
+    \textbf{\textit{Thinkhat}} \\
+    \textit{Hyderabad, Telangana}
+}{
+    \textbf{Full Stack Developer} \\
+    \textit{February 2023 – Present}
+}
+\end{twocolentry}
+
+\vspace{0.10cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Designed and delivered end-to-end product features for the SOCRATIC AI platform using \textbf{React}, \textbf{Node.js}, \textbf{Hasura}, and \textbf{Redux}.
+        
+        \item Built a \textbf{user feedback and analytics system} to capture response quality insights, enabling data-informed improvements to AI product behavior.
+        
+        \item Achieved \textbf{99\% application uptime} and reduced mean time to resolution by \textbf{40\%} through proactive monitoring using \textbf{Datadog RUM, logs, and dashboards}.
+        
+        \item Integrated \textbf{FHIR-compliant APIs} and frontend workflows to support healthcare interoperability requirements.
+        
+        \item Built and optimized \textbf{responsive dashboard interfaces} for content management and operational workflows across devices.
+        
+        \item Implemented \textbf{JWT-based authentication and authorization} across frontend routes and backend APIs for secure access control.
+        
+        \item Collaborated in feature architecture discussions focused on scalability and maintainability.
+
+        % \item Currently contributing to \textbf{OSCE Platform} development, handling both frontend and backend modules, ensuring low latency and high availability.
+
+        
+        % \item \textbf{Mentored two junior frontend developers} on React best practices, state management with Redux, and debugging techniques, improving team productivity and code quality.
+        
+    \end{highlights}
+\end{onecolentry}
+
+\section{Personal Project}
+
+\begin{onecolentry}
+    \textbf{\textit{Codrly}}
+\end{onecolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+        \item Built a full-stack developer networking platform using React, Node.js, Express, and MongoDB with authentication and real-time communication features.
+    
+        \item Implemented Socket.io-based real-time chat with reconnection handling and message persistence for reliable communication.
+        
+         \item Deployed backend services on AWS EC2, configured Nginx as a reverse proxy, and integrated Amazon SES for transactional email delivery.
+
+
+\end{highlights}
+\end{onecolentry}
+
+
+
+\vspace{0.05cm}
+
+
+% ---------- Education ----------
+\section{Education}
+
+\begin{twocolentry}{
+    \textit{Jul 2024 – 2026} \\
+    \textit{CGPA: \textbf{8.90}}
+}{
+    \textbf{Chandigarh University} \\
+    \textbf{\textit{Master of Computer Applications (MCA)}}
+}
+\end{twocolentry}
+\vspace{0.2cm}
+\begin{twocolentry}{
+    \textit{Jul 2017– Jun 2020} \\
+    \textit{CGPA: \textbf{7.50}}
+}{
+    \textbf{Indira Gandhi National Tribal University} \\
+    \textbf{\textit{B.voc in Software Development}}
+}
+\end{twocolentry}
+
+\end{document}
